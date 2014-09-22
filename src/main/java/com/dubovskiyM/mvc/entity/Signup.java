@@ -21,7 +21,7 @@ public class Signup implements Serializable {
     private String password;
     private String email;
     private String sex;
-    private byte [] userImage;
+    private byte [] userImage ;
 
     @OneToMany
     (mappedBy = "signup",cascade = CascadeType.ALL)
