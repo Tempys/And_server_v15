@@ -48,6 +48,7 @@
         <input type="text" class="form-control" name="j_username" >
         <input type="password" class="form-control" name="j_password" >
         <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+        <p><a href="registration.jsp"></a></p>
     </form>
 </div>
 

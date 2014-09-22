@@ -9,8 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 
@@ -24,6 +27,14 @@ public class SignupController {
     User_service user_service;
     @Autowired
     RoleService roleService;
+
+
+
+    @RequestMapping(value = "/registration",method = RequestMethod.GET)
+    public String OpenRegistration(Model model) {
+        log.trace("________START________");
+        return "registration";
+    }
 
     @RequestMapping(value = "/regist", method = RequestMethod.POST)
     public
@@ -43,6 +54,28 @@ public class SignupController {
         return s;
     }
 
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public
+    @ResponseBody
+    String registratiom(HttpServletRequest request, HttpServletResponse response) {
+        log.info("Registration start ...");
+        log.info(request.getParameter("Username ")+"  "+ request.getParameter("Sex"));
+
+         Signup signup = new Signup();
+        signup.setLogin(request.getParameter("Username"));
+        signup.setPassword(request.getParameter("cpassword"));
+        signup.setName(request.getParameter("fname"));
+        signup.setSurname(request.getParameter("lname"));
+        signup.setEmail(request.getParameter("Email"));
+        signup.setSex(request.getParameter("Sex"));
+
+
+
+
+
+       return "ok";
+    }
+
     @RequestMapping(value = "/signin", method = RequestMethod.POST)
     public
     @ResponseBody
@@ -60,6 +93,8 @@ public class SignupController {
 
         return answer;
     }
+
+
 
 
 }

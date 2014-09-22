@@ -20,14 +20,16 @@ import java.security.Principal;
 public class UserController {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
+
     @Autowired
     ImageService imageService;
+
     @Autowired
     User_service user_service;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginPage(Model model) {
-        log.trace("STARt________________");
+        log.trace("________START________");
         return "login";
     }
 
@@ -35,7 +37,7 @@ public class UserController {
     @RequestMapping(value = "/gallery_p", method = RequestMethod.GET)
     public String GetGall(Model model, Principal principal) {
         final String name = principal.getName();
-        log.trace("STARt________________");
+        log.trace("________START__Controller______________");
 
         model.addAttribute("tt", imageService.ImageList(name));
         log.trace(imageService.ImageList(name).get(0).getImage_path() + imageService.ImageList(name).get(0).getName());

@@ -19,7 +19,7 @@ public class Image_save implements Serializable {
     private String image_path;
     @DateTimeFormat
     private Date date;
-    private String category;
+
 
     @ManyToOne
     @JoinColumn(name = "login", referencedColumnName = "login")
@@ -65,11 +65,5 @@ public class Image_save implements Serializable {
         this.signup = signup;
     }
 
-    public String getCategory() {
-        return category;
-    }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
 }

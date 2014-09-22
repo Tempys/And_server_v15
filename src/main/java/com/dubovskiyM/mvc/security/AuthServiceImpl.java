@@ -34,7 +34,7 @@ public class AuthServiceImpl implements UserDetailsService {
         log.trace("START-------------------------------------");
 
         Signup details = user_service.findByLogin(username);
-        log.trace(details.getLogin() + "---------------------" + details.getPassword());
+        log.trace(details.getLogin() + "---------------------" + details.getPassword()+" "+details.getRole());
 
         Collection<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
 

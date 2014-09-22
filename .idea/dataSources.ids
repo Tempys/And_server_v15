@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source source="LOCAL" name="MySQL - @localhost" uuid="2bdfb6e4-6a4e-413c-add5-e3976aa3cd98">
-    <database-info product="MySQL" version="5.6.16-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.26 ( Revision: ${bzr.revision-id} )">
+  <data-source source="LOCAL" name="MySQL - @localhost" uuid="66101034-560f-4265-80f7-31d9b662a5a7">
+    <database-info product="MySQL" version="5.6.20" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -13,7 +13,6 @@
       <column name="image_path" sqlType="CHAR" length="30" precision="0" nullable="false" jdbcType="1"/>
       <column name="date" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
       <column name="login" sqlType="CHAR" length="30" precision="0" nullable="false" jdbcType="1"/>
-      <column name="category" sqlType="VARCHAR" length="60" precision="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="fk_image_user" columns="login" ref-table="reg_f" ref-schema="" ref-catalog="andr_spring" ref-columns="login" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
@@ -24,6 +23,9 @@
       <column name="login" sqlType="CHAR" length="30" precision="0" nullable="false" jdbcType="1"/>
       <column name="password" sqlType="CHAR" length="30" precision="0" nullable="false" jdbcType="1"/>
       <column name="role" sqlType="BIGINT" length="19" precision="0" nullable="false" jdbcType="-5"/>
+      <column name="email" sqlType="CHAR" length="30" precision="0" nullable="false" jdbcType="1"/>
+      <column name="sex" sqlType="CHAR" length="30" precision="0" nullable="false" jdbcType="1"/>
+      <column name="userImage" sqlType="LONGBLOB" length="2147483647" precision="0" nullable="false" jdbcType="-4"/>
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="fk_reg_f" columns="role" ref-table="role" ref-schema="" ref-catalog="andr_spring" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <exported-key name="fk_image_user" table="image_save" schema="" catalog="andr_spring" columns="login"/>

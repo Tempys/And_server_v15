@@ -47,11 +47,7 @@
         <property name="testWhileIdle" value="true"/>
         <property name="removeAbandoned" value="true"/>
     </bean>
-    <!-- As an alternative, for embedded databases see <jdbc:embedded-database/>. -->
-    <!--<jdbc:initialize-database data-source="dataSource">
-        <jdbc:script location="${db.jdbc.initLocation}"/>
-        &lt;!&ndash;<jdbc:script location="${db.jdbc.dataLocation}"/>&ndash;&gt;
-    </jdbc:initialize-database>-->
+
 
        <bean id="persistenceExceptionTranslationPostProcessor"
           class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>

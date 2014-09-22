@@ -90,7 +90,7 @@ public class Image_save_controller {
         image_save.setSignup(signup);
         image_save.setName(imageName);
         image_save.setImage_path(pathName);
-        image_save.setCategory(category);
+        //image_save.setCategory(category);
         imageService.Image_save(image_save);
        /*          / Saving entities                   */
 
